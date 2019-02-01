@@ -7,8 +7,8 @@ RUN apt-get -y install nodejs
 
 COPY . /app
 RUN cd /app \
-  && npm install -g ember-cli bower \
-  && npm install && bower install --allow-root \
+  && npm install -g ember-cli \
+  && npm install \
   && ember build -environment production --output-path /usr/share/nginx/html
 
 WORKDIR /usr/share/nginx/html
